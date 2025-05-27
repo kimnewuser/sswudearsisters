@@ -41,6 +41,12 @@ body {
   margin-bottom: 30px;
 }
 
+.title,
+.subtitle {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
   
  /* 햄버거 메뉴 버튼 */
 .menu-button {
