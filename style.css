@@ -1,51 +1,46 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    overflow-x: hidden;
-  }
-  
-  /* 포스터 전체와 오버레이 포함 컨테이너 */
-  .poster-container {
-    position: relative;
-    width: 100vw;
-  }
-  
-  /* 포스터 이미지 */
-  #poster {
-    width: 100vw;
-    height: auto;
-    display: block;
-    opacity: 0.5;
-    transition: opacity 0.3s ease-out;
-  }
-  
-  /* 포스터 위 텍스트 오버레이 */
-  .overlay-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 40px 20px;
-    width: 100%;
-    z-index: 1;
-  }
-  
-  .title {
-    font-size: 2.8rem;
-    margin-bottom: 10px;
-  }
-  
-  .subtitle {
-    font-size: 1.5rem;
-    opacity: 0.9;
-    margin-bottom: 30px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+
+/* 포스터 이미지를 고정 배경처럼 */
+#poster {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;          /* 화면 가득 채움 */
+  object-fit: cover;       /* 비율 유지하며 꽉 채움 */
+  z-index: -1;             /* 배경으로 내려보냄 */
+  opacity: 0.5;
+}
+
+/* 콘텐츠 전체를 담는 영역 */
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  padding: 40px 20px;
+}
+
+.title {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
   
  /* 햄버거 메뉴 버튼 */
 .menu-button {
