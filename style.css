@@ -23,12 +23,12 @@ body {
   opacity: 0.5;
 }
 
-/* 콘텐츠 전체를 담는 영역 */
+/* 콘텐츠 전체를 담는 영역
 .content-wrapper {
   position: relative;
   z-index: 1;
   padding: 40px 20px;
-}
+} */
 
 .title {
   font-size: 2.8rem;
@@ -159,4 +159,119 @@ body {
     margin-right: 15px;    /* 링크 사이 여백 */
   }
   
-  
+/* 포스터와 겹치는 오버레이 컨테이너(본문 박스) */
+.overlay-text {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;       /* 본문 폭 제한 */
+  margin: 80px auto 120px;
+  padding: 0 20px;        /* 좌우 여백 */
+}
+
+/* 포스터 컨테이너(명시만, 필요 시 확장) */
+.poster-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* 안내문 공통 스타일 (기존 인라인 스타일 대체) */
+.note {
+  font-size: 1rem;
+  margin-top: -15px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+  padding-left: 10px;   /* 제목, 부제목과 동일한 들여쓰기 */
+}
+
+
+/* 제목/부제목 가장자리 붙는 문제 완화 (좌우 패딩 + 행간/자간 살짝 보정) */
+.title {
+  font-size: 2.6rem;      /* 모바일 가독성 보정 */
+  margin-bottom: 12px;
+  padding-inline: 8px;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  opacity: 0.95;
+  margin-bottom: 28px;
+  padding-inline: 8px;
+  line-height: 1.4;
+}
+
+/* 본문 카드 간격/가독성 */
+.exhibition-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+/* 카드 공통: 모바일 여백/줄간 개선 */
+.exhibition-box,
+.exhibition-box2 {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 10px;
+  padding: 18px;
+  width: min(900px, 86%);
+  margin: 0 auto;
+  backdrop-filter: blur(2px);
+}
+
+.exhibition-box2 { margin-top: 28px; }
+
+.exhibition-text {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.exhibition-text2 {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  white-space: pre-line;
+}
+
+/* 링크 스타일(접근성 + 가독성) */
+.exhibition-text2 a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255,255,255,0.4);
+  padding-bottom: 2px;
+  margin-right: 14px;
+}
+
+.exhibition-text2 a:hover,
+.exhibition-text2 a:focus {
+  border-bottom-style: solid;
+}
+
+/* 구분선 여백 보정 */
+.divider-line {
+  width: 100%;
+  max-width: 900px;
+  height: 1px;
+  background-color: #fff;
+  opacity: 0.35;
+  margin: 6px auto 12px;
+}
+
+/* 작은 화면 대응 */
+@media (max-width: 480px) {
+  .title { font-size: 2.1rem; }
+  .subtitle { font-size: 1.05rem; }
+  .exhibition-text { font-size: 1.2rem; }
+  .exhibition-text2 { font-size: 1rem; }
+}
+
+.exhibition-image {
+  display: block;
+  width: 80%;          /* 카드 너비에 맞춰 꽉 차게 */
+  max-height: 100%;    /* 너무 커지지 않도록 제한 */
+  object-fit: cover;    /* 비율 유지하며 꽉 채움 */
+  border-radius: 6px;
+  margin: 15px auto;       /* 위아래 여백 */
+}
